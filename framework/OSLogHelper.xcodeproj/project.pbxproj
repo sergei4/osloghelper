@@ -18,6 +18,8 @@
 		C32E58E325F645B3002712C7 /* demoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E58E225F645B3002712C7 /* demoAppUITests.swift */; };
 		C32E58FB25F64619002712C7 /* OSLogHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32E58A125F64555002712C7 /* OSLogHelper.framework */; };
 		C32E58FC25F64619002712C7 /* OSLogHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C32E58A125F64555002712C7 /* OSLogHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C32E590525F64834002712C7 /* ActivityStreamSPI.h in Headers */ = {isa = PBXBuildFile; fileRef = C32E590425F64834002712C7 /* ActivityStreamSPI.h */; };
+		C32E591825F649FD002712C7 /* OSLogStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E591725F649FD002712C7 /* OSLogStream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,9 @@
 		C32E58DE25F645B3002712C7 /* demoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32E58E225F645B3002712C7 /* demoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoAppUITests.swift; sourceTree = "<group>"; };
 		C32E58E425F645B3002712C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C32E590425F64834002712C7 /* ActivityStreamSPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStreamSPI.h; sourceTree = "<group>"; };
+		C32E590A25F6486E002712C7 /* ObjcBridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcBridgeHeader.h; sourceTree = "<group>"; };
+		C32E591725F649FD002712C7 /* OSLogStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSLogStream.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +157,11 @@
 		C32E58A325F64555002712C7 /* OSLogHelper */ = {
 			isa = PBXGroup;
 			children = (
-				C32E58A425F64555002712C7 /* OSLogHelper.h */,
 				C32E58A525F64555002712C7 /* Info.plist */,
+				C32E590425F64834002712C7 /* ActivityStreamSPI.h */,
+				C32E58A425F64555002712C7 /* OSLogHelper.h */,
+				C32E591725F649FD002712C7 /* OSLogStream.swift */,
+				C32E590A25F6486E002712C7 /* ObjcBridgeHeader.h */,
 			);
 			path = OSLogHelper;
 			sourceTree = "<group>";
@@ -238,6 +246,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C32E590525F64834002712C7 /* ActivityStreamSPI.h in Headers */,
 				C32E58B225F64556002712C7 /* OSLogHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +356,7 @@
 				TargetAttributes = {
 					C32E58A025F64555002712C7 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					C32E58A925F64556002712C7 = {
 						CreatedOnToolsVersion = 12.4;
@@ -431,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C32E591825F649FD002712C7 /* OSLogStream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +562,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = OSLogHelper/ObjcBridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -608,6 +620,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = OSLogHelper/ObjcBridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -618,6 +631,7 @@
 		C32E58B625F64556002712C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4R89MRW3A7;
@@ -636,6 +650,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -644,6 +659,7 @@
 		C32E58B725F64556002712C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4R89MRW3A7;
@@ -670,6 +686,7 @@
 		C32E58B925F64556002712C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4R89MRW3A7;
 				INFOPLIST_FILE = OSLogHelperTests/Info.plist;
@@ -688,6 +705,7 @@
 		C32E58BA25F64556002712C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4R89MRW3A7;
 				INFOPLIST_FILE = OSLogHelperTests/Info.plist;
@@ -706,6 +724,7 @@
 		C32E58E525F645B3002712C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -728,6 +747,7 @@
 		C32E58E625F645B3002712C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
