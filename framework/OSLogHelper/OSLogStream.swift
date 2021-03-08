@@ -8,7 +8,7 @@
 // Requires importing https://github.com/apple/llvm-project/blob/apple/master/lldb/tools/debugserver/source/MacOSX/DarwinLog/ActivityStreamSPI.h via bridging header
 import Foundation
 
-class OSLogStream {
+public class OSLogStream {
     private var stream: os_activity_stream_t!
     private let filterPid = ProcessInfo.processInfo.processIdentifier;
     private let logHandler: (LogMessage) -> Void
@@ -18,12 +18,12 @@ class OSLogStream {
     private let OSActivityStreamCancel: os_activity_stream_cancel_t
     private let OSLogCopyFormattedMessage: os_log_copy_formatted_message_t
 
-    struct LogMessage {
+    public struct LogMessage {
         let msg: String
         let date: Date
     }
 
-    init?(logHandler: @escaping (LogMessage) -> Void) {
+    public init?(logHandler: @escaping (LogMessage) -> Void) {
         self.logHandler = logHandler
 
         guard let handle = dlopen("/System/Library/PrivateFrameworks/LoggingSupport.framework/LoggingSupport", RTLD_NOW) else { return nil }

@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ActivityStreamSPI.h"
 
 //! Project version number for OSLogHelper.
 FOUNDATION_EXPORT double OSLogHelperVersionNumber;

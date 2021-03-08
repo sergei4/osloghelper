@@ -18,7 +18,7 @@
 		C32E58E325F645B3002712C7 /* demoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E58E225F645B3002712C7 /* demoAppUITests.swift */; };
 		C32E58FB25F64619002712C7 /* OSLogHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32E58A125F64555002712C7 /* OSLogHelper.framework */; };
 		C32E58FC25F64619002712C7 /* OSLogHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C32E58A125F64555002712C7 /* OSLogHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C32E590525F64834002712C7 /* ActivityStreamSPI.h in Headers */ = {isa = PBXBuildFile; fileRef = C32E590425F64834002712C7 /* ActivityStreamSPI.h */; };
+		C32E590525F64834002712C7 /* ActivityStreamSPI.h in Headers */ = {isa = PBXBuildFile; fileRef = C32E590425F64834002712C7 /* ActivityStreamSPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C32E591825F649FD002712C7 /* OSLogStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E591725F649FD002712C7 /* OSLogStream.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +87,6 @@
 		C32E58E225F645B3002712C7 /* demoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoAppUITests.swift; sourceTree = "<group>"; };
 		C32E58E425F645B3002712C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C32E590425F64834002712C7 /* ActivityStreamSPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStreamSPI.h; sourceTree = "<group>"; };
-		C32E590A25F6486E002712C7 /* ObjcBridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcBridgeHeader.h; sourceTree = "<group>"; };
 		C32E591725F649FD002712C7 /* OSLogStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSLogStream.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,10 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				C32E58A525F64555002712C7 /* Info.plist */,
-				C32E590425F64834002712C7 /* ActivityStreamSPI.h */,
 				C32E58A425F64555002712C7 /* OSLogHelper.h */,
+				C32E590425F64834002712C7 /* ActivityStreamSPI.h */,
 				C32E591725F649FD002712C7 /* OSLogStream.swift */,
-				C32E590A25F6486E002712C7 /* ObjcBridgeHeader.h */,
 			);
 			path = OSLogHelper;
 			sourceTree = "<group>";
@@ -562,7 +560,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = OSLogHelper/ObjcBridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -620,7 +617,6 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = OSLogHelper/ObjcBridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -646,7 +642,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.sergei4.tools.OSLogHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = me.sergei4.tools.osloghelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -674,7 +670,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.sergei4.tools.OSLogHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = me.sergei4.tools.osloghelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
