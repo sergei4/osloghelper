@@ -19,8 +19,8 @@ public class OSLogStream {
     private let OSLogCopyFormattedMessage: os_log_copy_formatted_message_t
 
     public struct LogMessage {
-        let msg: String
-        let date: Date
+        public let msg: String
+        public let date: Date
     }
 
     public init?(logHandler: @escaping (LogMessage) -> Void) {
